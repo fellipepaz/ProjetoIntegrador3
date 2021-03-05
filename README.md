@@ -7,4 +7,5 @@
  Patrick Moreira Maia 
  
  Gustavo Alves
-
+ 
+ Área onde o cliente atua: adega e bebidas
