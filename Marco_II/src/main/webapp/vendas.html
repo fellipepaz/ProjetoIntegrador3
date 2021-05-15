@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Vendas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body> 
+        <h1>Vendas</h1>
+    </body>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Vendas</li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="produtos.html">Cadastro Produtos</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="cliente.html">Cadastro Cliente</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.html">Relatorios</a></li>
+
+    </ol>
+    <form action ="GreetingServlet" method="POST">
+        Nome do cliente: <input type="text" name="nome" size="20"><br />
+        Produto: <input type="text" name="produto" size="20"><br />
+        Valor: <input type="text" name="valor" size="20"><br />
+        Filial: <input type="text" name="filial" size="20"><br />
+        Data da venda: <input type="text" name="date" size="20"><br />
+        <br /><br />
+        <div class="form-group col-md-2 pr-3">
+            <button class="btn btn-small btn-dark" onclick="botao()" >Vender</button>
+        </div>
+    </form>
+
+</html>

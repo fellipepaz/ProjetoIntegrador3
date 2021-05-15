@@ -1,0 +1,48 @@
+15-May-2021 16:36:18.081 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.66
+15-May-2021 16:36:18.121 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2021 22:44:01 UTC
+15-May-2021 16:36:18.132 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.66.0
+15-May-2021 16:36:18.132 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+15-May-2021 16:36:18.135 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2021 16:36:18.136 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2021 16:36:18.137 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_111\jre
+15-May-2021 16:36:18.137 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_111-b14
+15-May-2021 16:36:18.137 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2021 16:36:18.138 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\thiag\Downloads\apache-tomcat-8.5.66
+15-May-2021 16:36:18.138 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\thiag\Downloads\apache-tomcat-8.5.66
+15-May-2021 16:36:18.139 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\thiag\Downloads\apache-tomcat-8.5.66\conf\logging.properties
+15-May-2021 16:36:18.140 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2021 16:36:18.140 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|LAPTOP-UC7141DH
+15-May-2021 16:36:18.141 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2021 16:36:18.141 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-May-2021 16:36:18.142 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+15-May-2021 16:36:18.142 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\thiag\Downloads\apache-tomcat-8.5.66
+15-May-2021 16:36:18.142 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\thiag\Downloads\apache-tomcat-8.5.66
+15-May-2021 16:36:18.143 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\thiag\Downloads\apache-tomcat-8.5.66\temp
+15-May-2021 16:36:18.143 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+15-May-2021 16:36:18.144 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-May-2021 16:36:18.144 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+15-May-2021 16:36:18.506 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+15-May-2021 16:36:19.755 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2021 16:36:20.732 INFORMAÇÕES [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+15-May-2021 16:36:20.856 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 6467 ms
+15-May-2021 16:36:21.194 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2021 16:36:21.195 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.66]
+15-May-2021 16:36:21.296 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\docs]
+15-May-2021 16:36:23.117 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\docs] has finished in [1,846] ms
+15-May-2021 16:36:23.117 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\examples]
+15-May-2021 16:36:27.467 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\examples] has finished in [4,350] ms
+15-May-2021 16:36:27.467 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\host-manager]
+15-May-2021 16:36:27.576 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\host-manager] has finished in [109] ms
+15-May-2021 16:36:27.576 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\manager]
+15-May-2021 16:36:27.766 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\manager] has finished in [190] ms
+15-May-2021 16:36:27.766 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\ROOT]
+15-May-2021 16:36:27.883 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\webapps\ROOT] has finished in [117] ms
+15-May-2021 16:36:27.950 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2021 16:36:28.078 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 7218 ms
+15-May-2021 16:36:49.362 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\conf\Catalina\localhost\Marco_II.xml]
+15-May-2021 16:36:49.607 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\conf\Catalina\localhost\Marco_II.xml] has finished in [245] ms
+15-May-2021 16:36:49.620 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Marco_II]] after start() had already been called. The second call will be ignored.
+15-May-2021 16:37:42.391 INFORMAÇÕES [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/Marco_II]
+15-May-2021 16:37:42.456 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\conf\Catalina\localhost\Marco_II.xml]
+15-May-2021 16:37:42.713 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\thiag\Downloads\apache-tomcat-8.5.66\conf\Catalina\localhost\Marco_II.xml] has finished in [257] ms
+15-May-2021 16:37:42.731 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Marco_II]] after start() had already been called. The second call will be ignored.

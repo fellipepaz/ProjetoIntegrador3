@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Relatórios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <div class="app">
+        <div id="content" style="flex-direction: column; background-color: white;">
+            <div class="row">
+                <h2 class="text-center">Relatórios</h2>
+            </div>
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="vendas.html">Vendas</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="produtos.html">Cadastro Produtos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="cliente.html">Cadastro Cliente</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Relatorios</li>
+
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="container">    
+                <div class="row col-md-10 mx-auto flex-row ">
+                    <div class="form-group col-md-2 pr-3">
+                        <label>Nome do Cliente</label>
+                        <input type="text" class="form-control" id="idCliente">
+                        <div><label>Produto</label>
+                            <input type="text" class="form-control" id="idProduto">
+                            <label>Filial</label>
+                            <input type="text" class="form-control" id="idFilial"></div>
+
+                    </div>
+                    <button class="btn btn-small btn-dark" onclick="botao()" >Pesquisar</button>
+                </div>
+            </div>
+        </div>
+</html>
