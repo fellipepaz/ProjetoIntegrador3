@@ -1,7 +1,7 @@
 <%-- 
     Document   : erro
     Created on : 16/05/2021, 00:18:06
-    Author     : wmdbox
+    Author     : thiag
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>OPERAÇÃO NEGADA!</h1>
+        <button class="btn btn-small btn-dark"><a href =index.jsp">Voltar</a></button>
     </body>
 </html>

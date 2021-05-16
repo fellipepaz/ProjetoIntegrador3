@@ -1,10 +1,16 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : produtos
+    Created on : 16/05/2021, 14:10:59
+    Author     : thiag
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Produtos</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cadastro produtos</title>
+    </head>
     <body>
         <div class="app">
             <div id="content" style="flex-direction: column; background-color: white;">
@@ -14,11 +20,11 @@
                 <div class="row">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="vendas.html">Vendas</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="index.jsp">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="vendas.jsp">Vendas</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Cadastro Produtos</li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="cliente.html">Cadastro Cliente</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.html">Relatorios</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="cliente.jsp">Cadastro Cliente</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.jsp">Relatorios</a></li>
 
                         </ol>
                     </nav>
@@ -36,9 +42,10 @@
 
                         </div>
                         <div class="form-group col-md-2 pr-3">
-                            <button class="btn btn-small btn-dark" onclick="botao()" >Cadastrar</button>
-                            <button class="btn btn-small btn-dark" onclick="botao()" >Pesquisar</button>
+                            <button type="submit" class="btn btn-small btn-dark">Cadastrar</button>
+                            <button type="submit" class="btn btn-small btn-dark">Pesquisar</button>
                         </div>
                     </div>
                 </div>
+                </body>
                 </html>

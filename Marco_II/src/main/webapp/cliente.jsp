@@ -1,7 +1,7 @@
 <%-- 
     Document   : cliente
     Created on : 16/05/2021, 00:02:29
-    Author     : wmdbox
+    Author     : thiag
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,15 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cadastro cliente</title>
     </head>
     <body>
          <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="vendas.html">Vendas</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="produtos.html">Cadastro Produtos</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="index.jsp">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="vendas.jsp">Vendas</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="produtos.jsp">Cadastro Produtos</a></li>
         <li class="breadcrumb-item active" aria-current="page">Cadastro Cliente</li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.html">Relatorios</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.jsp">Relatorios</a></li>
     </ol>
     <form action="CadastrarClienteServlet" method="POST">
         Nome: <input type="text" name="nome" ><br />
