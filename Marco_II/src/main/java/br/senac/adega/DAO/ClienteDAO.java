@@ -17,10 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-/**
- *
- * @author Beto
- */
+
 public class ClienteDAO {
   
    public static boolean cadastrar(Cliente cliente){
