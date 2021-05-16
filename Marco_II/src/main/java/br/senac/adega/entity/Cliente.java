@@ -19,7 +19,6 @@ public class Cliente {
     public int cep;
     public int numero;
     
-
     public Cliente(String nome, String cpf, String email, int cep, int numero) {
         this.nome = nome;
         this.cpf = cpf;;
@@ -27,31 +26,6 @@ public class Cliente {
         this.cep = cep;
         this.numero = numero;
         
-    }
-    
-    
-       public String getNome(){
-        return nome;
-    }
-       
-        public String getCpf(){
-        return cpf;
-    }
-       
-        public String getEmail(){
-        return email;
-    }
-      
-        public int getNumero(){
-        return numero;
-    }
-       
-        public int getCep(){
-        return cep;
-    }
-      
-        public int getId(){
-        return id;
     }
 }
 
