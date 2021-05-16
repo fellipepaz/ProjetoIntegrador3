@@ -1,4 +1,6 @@
 
+package br.senac.servlet;
+
 import br.senac.adega.DAO.ClienteDAO;
 import br.senac.adega.entity.Cliente;
 import java.io.IOException;
@@ -7,11 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GeetingServlet extends HttpServlet {
+public class CadastrarClienteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
     }
 
     @Override
@@ -27,10 +30,11 @@ public class GeetingServlet extends HttpServlet {
         boolean ok = ClienteDAO.cadastrar(cliente);
         
         if(ok){
-            response.sendRedirect("/sucesso.jsp");
+            response.sendRedirect("sucesso.jsp");
         }else{
-            response.sendRedirect("/erro.jsp");
+            response.sendRedirect("erro.jsp");
         }
+        
     }
 
 }

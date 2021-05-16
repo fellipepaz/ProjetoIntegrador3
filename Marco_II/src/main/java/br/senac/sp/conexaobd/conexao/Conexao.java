@@ -18,7 +18,7 @@ public class Conexao {
     }
     
     public static Connection getConexao() throws SQLException{
-        String url = "jdbc:mysql://localhost:3307/pi_adega?useSSL=false";
+        String url = "jdbc:mysql://127.0.0.1:3306/pi_adega?useSSL=false";
         String user = "root";
         String pass = "";
         

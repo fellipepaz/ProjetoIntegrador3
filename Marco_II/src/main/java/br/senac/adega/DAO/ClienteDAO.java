@@ -16,8 +16,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 public class ClienteDAO {
   
    public static boolean cadastrar(Cliente cliente){
@@ -33,7 +31,6 @@ public class ClienteDAO {
             ps.setInt(4, cliente.getCep());
             ps.setInt(5, cliente.getNumero());
             ps.executeUpdate();
-            
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
             ok = false;
