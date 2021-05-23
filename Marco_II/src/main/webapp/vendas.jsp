@@ -29,7 +29,7 @@
                         </ol>
                     </nav>
                 </div>
-                <form action ="GeetingServlet" method="POST">
+                <form action ="VenderProdutoServlet" method="POST">
                     Nome do cliente: <input type="text" name="nome"><br />
                     Produto: <input type="text" name="produto"><br />
                     Valor: <input type="text" name="valor"><br />

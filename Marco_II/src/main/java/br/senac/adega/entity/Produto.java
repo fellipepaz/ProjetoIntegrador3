@@ -1,40 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.senac.adega.entity;
 
-/**
- *
- * @author Beto
- */
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Produto {
-    public int id;
-    public String produto;  
-    public String filial;
-    public double valor;
-    public int quantidade;  
+    private int id;
+    private String produto;  
+    private String filial;
+    private double valor;
+    private int quantidade;  
   
- 
+
     
-       public String getProduto(){
-        return produto;
-    }
-       
-        public String getFilial(){
-        return filial;
-    }
-        public int getQuantidade(){
-        return quantidade;
-    }
-      
-         public double getValor(){
-        return valor;
-    }
-         
-        public int getId(){
-        return id;
+    public Produto (int id, String produto, String filial, double valor, int quantidade){
+
+    this.id = id;
+    this.produto = produto;
+    this.filial = filial;
+    this.valor = valor;
+    this.quantidade = quantidade;
+
     }
 }
-//
+
+

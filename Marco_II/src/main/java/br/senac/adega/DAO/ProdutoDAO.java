@@ -6,22 +6,21 @@
 package br.senac.adega.DAO;
 
 import br.senac.adega.entity.Produto;
+import java.sql.SQLException;
 import br.senac.sp.conexaobd.conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-
-/**
- *
- * @author Beto
- */
 public class ProdutoDAO {
 
-    public static void inserir(Produto item)throws Exception{
+    public static boolean inserir(Produto produtos){
+        boolean ok = true;
         String sql = "INSERT INTO produto (produto, filial, valor, quantidade) VALUES (?, ?, ?, ?)";
         
         Connection conexao = Conexao.getConexao();
@@ -29,18 +28,22 @@ public class ProdutoDAO {
         try{
             PreparedStatement comando = conexao.prepareStatement(sql);
             
-            comando.setString(1, item.produto);
-            comando.setString(2, item.filial);
-            comando.setDouble(3, item.valor);
-            comando.setInt(4, item.quantidade);          
+            comando.setString(1, produtos.getProduto());
+            comando.setString(2, produtos.getFilial());
+            comando.setDouble(3, produtos.getValor());
+            comando.setInt(4, produtos.getQuantidade());          
             comando.execute();
             
-        }finally{
-            conexao.close();
+        }catch (SQLException e){
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, e);
+            ok = false;
         }
+    return ok;
+
     }
     
-    public static void excluir(int id) throws Exception{
+    public static boolean excluir(int id){
+        boolean ok = true;
         String sql = "DELETE FROM produto WHERE id = ?";
         
         Connection conexao = Conexao.getConexao();
@@ -51,9 +54,11 @@ public class ProdutoDAO {
             comando.setInt(1, id);
    
             comando.execute();
-        }finally{
-            conexao.close();
+        }catch (SQLException e){
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, e);
+            ok = false;
         }
+    return ok;
     }
     
     public static List<Produto> listar() throws Exception{
@@ -68,16 +73,19 @@ public class ProdutoDAO {
             ResultSet dados = comando.executeQuery();
             
             while(dados.next()){
-                Produto item = new Produto();
-                
-               item.id = dados.getInt("id");
-                item.produto = dados.getString("produto");
-                item.filial = dados.getString("filial");
-                item.valor = dados.getDouble("valor");
-                item.quantidade = dados.getInt("quantidade");
-                lista.add(item); 
+               
+               int id = dados.getInt("id");
+               String produto = dados.getString("produto");
+               String filial = dados.getString("filial");
+               double valor = dados.getDouble("valor");
+               int quantidade = dados.getInt("quantidade");
+               
+               Produto produtos = new Produto(id,produto,filial,valor,quantidade);
+               lista.add(produtos); 
             }
             
+        }catch (SQLException e){
+
         }finally{
             conexao.close();
         }
@@ -85,7 +93,7 @@ public class ProdutoDAO {
         return lista;
     }
     
-    public static List<Produto> pesquisar(String produto) throws Exception{
+    public static List<Produto> pesquisar(String product) throws Exception{
         String sql = "SELECT * FROM produto WHERE produto LIKE ?";
         
         Connection conexao = Conexao.getConexao();
@@ -94,24 +102,24 @@ public class ProdutoDAO {
         try{
             PreparedStatement comando = conexao.prepareStatement(sql);
             
-            comando.setString(1, "%" + produto + "%");
+            comando.setString(1, "%" + product + "%");
             
             ResultSet dados = comando.executeQuery();
             
             while(dados.next()){
-                Produto item = new Produto();
-                
-                item.id = dados.getInt("id");
-                item.produto = dados.getString("produto");
-                item.filial = dados.getString("filial");
-                item.valor = dados.getDouble("valor");
-                item.quantidade = dados.getInt("quantidade");
                
-                
-                lista.add(item);
-                
+               int id = dados.getInt("id");
+               String produto = dados.getString("produto");
+               String filial = dados.getString("filial");
+               double valor = dados.getDouble("valor");
+               int quantidade = dados.getInt("quantidade");
+               
+               Produto produtos = new Produto(id,produto,filial,valor,quantidade);
+               lista.add(produtos); 
             }
             
+        }catch (SQLException e){
+
         }finally{
             conexao.close();
         }
@@ -119,7 +127,8 @@ public class ProdutoDAO {
         return lista;
     }
     
-    public static void editar(Produto item) throws Exception{
+    public static boolean editar(Produto produtos){
+        boolean ok = true;
         String sql = "UPDATE produto SET produto = ?, filial = ?, valor = ?, quantidade = ? WHERE id = ?"; 
         
         Connection conexao = Conexao.getConexao();
@@ -127,16 +136,18 @@ public class ProdutoDAO {
         try{
             PreparedStatement comando = conexao.prepareStatement(sql);
             
-             comando.setString(1, item.produto);
-            comando.setString(2, item.filial);
-            comando.setDouble(3, item.valor);
-            comando.setInt(4, item.quantidade);   
-            comando.setInt(5, item.id);
+             comando.setString(1, produtos.getProduto());
+            comando.setString(2, produtos.getFilial());
+            comando.setDouble(3, produtos.getValor());
+            comando.setInt(4, produtos.getQuantidade());   
+            comando.setInt(5, produtos.getId());
             
             comando.execute();
             
-        }finally{
-            conexao.close();
+        }catch (SQLException e){
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, e);
+            ok = false;
         }
+    return ok;
     }
 }

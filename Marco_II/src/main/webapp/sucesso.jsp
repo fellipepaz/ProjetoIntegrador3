@@ -3,7 +3,7 @@
     Created on : 16/05/2021, 00:17:57
     Author     : thiag
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>OPERAÇÃO REALIZADA COM SUCESSO!</h1>
-        <button class="btn btn-small btn-dark"><a href =index.jsp">Voltar</a></button>
+        <button class="btn btn-small btn-dark"><a href="<c:url value="index.jsp" />">Voltar</a></button>
     </body>
 </html>

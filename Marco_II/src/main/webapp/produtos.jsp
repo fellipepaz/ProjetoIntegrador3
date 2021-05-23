@@ -12,6 +12,7 @@
         <title>Cadastro produtos</title>
     </head>
     <body>
+
         <div class="app">
             <div id="content" style="flex-direction: column; background-color: white;">
                 <div class="row">
@@ -33,13 +34,17 @@
                 <div class="container">    
                     <div class="row col-md-10 mx-auto flex-row ">
                         <div class="form-group col-md-2 pr-3">
-                            <label>Nome do Produto</label>
-                            <input type="text" class="form-control" id="idProduto">
-                            <div><label>Valor</label>
-                                <input type="text" class="form-control" id="idValor">
-                                <label>Quantidade</label>
-                                <input type="text" class="form-control" id="idQuant"></div>
-
+                            <form action="CadastrarProdutoServlet" method="POST">
+                                <label>IdProduto</label>
+                                <input type="text" class="form-control" id="id">
+                                <label>Produto</label>
+                                <input type="text" class="form-control" id="produto">
+                                <label>Filial</label>
+                                <input type="text" class="form-control" id="filial">
+                                <div><label>Valor</label>
+                                    <input type="text" class="form-control" id="valor">
+                                    <label>Quantidade</label>
+                                    <input type="text" class="form-control" id="quantidade"></div>
                         </div>
                         <div class="form-group col-md-2 pr-3">
                             <button type="submit" class="btn btn-small btn-dark">Cadastrar</button>
@@ -49,3 +54,4 @@
                 </div>
                 </body>
                 </html>
+
