@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
-    public static boolean inserir(Produto produtos){
+    public static boolean inserir(Produto produtos) throws SQLException{
         boolean ok = true;
         String sql = "INSERT INTO produto (produto, filial, valor, quantidade) VALUES (?, ?, ?, ?)";
         
@@ -42,7 +42,7 @@ public class ProdutoDAO {
 
     }
     
-    public static boolean excluir(int id){
+    public static boolean excluir(int id) throws SQLException{
         boolean ok = true;
         String sql = "DELETE FROM produto WHERE id = ?";
         
@@ -127,7 +127,7 @@ public class ProdutoDAO {
         return lista;
     }
     
-    public static boolean editar(Produto produtos){
+    public static boolean editar(Produto produtos) throws SQLException{
         boolean ok = true;
         String sql = "UPDATE produto SET produto = ?, filial = ?, valor = ?, quantidade = ? WHERE id = ?"; 
         
