@@ -12,6 +12,7 @@
         <title>Cadastro cliente</title>
     </head>
     <body>
+        <h2 class="text-center">Clientes</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><a href="index.jsp">Inicio</a></li>
             <li class="breadcrumb-item active" aria-current="page"><a href="vendas.jsp">Vendas</a></li>
@@ -29,6 +30,8 @@
             <div class="form-group col-md-2 pr-3">
                 <button type="submit" class="btn btn-small btn-dark">Cadastrar Cliente</button>
                 <button type="submit" class="btn btn-small btn-dark">Pesquisar Cliente</button>
+                <button type="submit" class="btn btn-small btn-dark">Atualizar Cliente</button>
+                <button type="submit" class="btn btn-small btn-dark">Excluir Cliente</button>
             </div>
         </form>
     </body>

@@ -15,7 +15,7 @@
         <div class="app">
             <div id="content" style="flex-direction: column; background-color: white;">
                 <div class="row">
-                    <h2 class="text-center">Relatórios</h2>
+                    <h2 class="text-center">Vendas</h2>
                 </div>
                 <div class="row">
                     <nav aria-label="breadcrumb">

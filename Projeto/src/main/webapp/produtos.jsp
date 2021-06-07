@@ -47,8 +47,10 @@
                                     <input type="text" class="form-control" id="quantidade"></div>
                         </div>
                         <div class="form-group col-md-2 pr-3">
-                            <button type="submit" class="btn btn-small btn-dark">Cadastrar</button>
-                            <button type="submit" class="btn btn-small btn-dark">Pesquisar</button>
+                            <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
+                            <button type="submit" class="btn btn-small btn-dark">Pesquisar Produto</button>
+                            <button type="submit" class="btn btn-small btn-dark">Atualizar Produto</button>
+                            <button type="submit" class="btn btn-small btn-dark">Excluir Produto</button>
                         </div>
                     </div>
                 </div>
