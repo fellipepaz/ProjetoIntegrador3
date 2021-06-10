@@ -18,13 +18,15 @@ public class Cliente {
     public String email;    
     public int cep;
     public int numero;
+    public Date dataCadastro;
     
-    public Cliente(String nome, String cpf, String email, int cep, int numero) {
+    public Cliente(int id, String nome, String cpf, String email, int cep, int numero, Date dataCadastro) {
         this.nome = nome;
         this.cpf = cpf;;
         this.email = email;
         this.cep = cep;
         this.numero = numero;
+        this.dataCadastro=dataCadastro;
         
     }
 }

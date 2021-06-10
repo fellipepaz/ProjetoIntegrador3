@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,7 @@ public class ClienteDAO {
   
    public static boolean cadastrar(Cliente cliente){
         boolean ok = true;
-        String query = "insert into cliente (nome,cpf,email,cep,numero ) values (?,?,?,?,?)";
+        String query = "insert into cliente (nome, cpf, email, cep, numero, dataCadastro ) values (?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -30,6 +31,7 @@ public class ClienteDAO {
             ps.setString(3, cliente.getEmail());
             ps.setInt(4, cliente.getCep());
             ps.setInt(5, cliente.getNumero());
+            ps.setDate(6, cliente.getDataCadastro());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,7 +43,7 @@ public class ClienteDAO {
      public static boolean atualizar(Cliente cliente){
         
         boolean ok = true;
-        String query = "update cliente set nome=?, email=?,cep=?,numero=? where cpf=?";
+        String query = "update cliente set nome=?, email=?,cep=?,numero=?,data=? where cpf=?";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -51,6 +53,7 @@ public class ClienteDAO {
             ps.setInt(3, cliente.getCep());
             ps.setInt(4, cliente.getNumero());
             ps.setString(5, cliente.getCpf());
+            ps.setDate(6, cliente.getDataCadastro());
             ps.executeUpdate();
             
         } catch (SQLException ex) {
@@ -73,12 +76,13 @@ public class ClienteDAO {
             
             while(rs.next()){
                 String nome = rs.getString("nome");
-                 String cpf = rs.getString("cpf");
+                String cpf = rs.getString("cpf");
                 String email = rs.getString("email");
                 int cep = rs.getInt("cep");
                 int numero = rs.getInt("numero");
+                Date dataCadastro = rs.getDate("dataCadastro");
                
-                Cliente cliente = new Cliente(nome,cpf,email,cep,numero);
+                Cliente cliente = new Cliente(nome,cpf,email,cep,numero,dataCadastro);
                 clientes.add(cliente);
             }
             
@@ -124,7 +128,8 @@ public class ClienteDAO {
                 String email = rs.getString("email");
                 int cep = rs.getInt("cep");
                 int numero = rs.getInt("numero");
-                cliente = new Cliente(nome,cpf,email,cep,numero);
+                Date dataCadastro = rs.getDate("dataCadastro");
+                cliente = new Cliente(nome,cpf,email,cep,numero,dataCadastro);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
