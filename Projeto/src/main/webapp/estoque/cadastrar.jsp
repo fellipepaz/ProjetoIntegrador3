@@ -1,7 +1,7 @@
 <%-- 
-    Document   : produtos
-    Created on : 16/05/2021, 14:10:59
-    Author     : thiag
+    Document   : cadastrar
+    Created on : 10/06/2021, 16:51:11
+    Author     : wmdbox
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,8 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <title>Cadastro produtos</title>
+        <title>Cadastrar Estoque</title>
     </head>
     <body>
         <div class="container">
@@ -33,8 +32,7 @@
             
                 <div class="container"> 
                     <div class="row col-md-10 mx-auto flex-row ">
-                        <c:if test="${empty produto}">
-                            <form action="CadastrarProduto" method="POST">
+                            <form action="CadastrarEstoque" method="POST">
                                     <!--<label>IdProduto</label>
                                     <input type="text" class="form-control" id="id">-->
                                     <label>Nome do Produto</label>
@@ -51,26 +49,6 @@
                                     <input type="date" class="form-control" name="dataCadastro"><br>
                                 <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
                             </form>
-                        </c:if>
-                        <c:if test="${not empty produto}">
-                            <form action="CadastrarProduto" method="POST">
-                                <!--<label>IdProduto</label>
-                                <input type="text" class="form-control" id="id">-->
-                                <label>Nome do Produto</label>
-                                <input type="text" class="form-control" name="produto">
-                                <label>Categoria</label>
-                                <input type="text" class="form-control" name="categoria">
-                                <label>ID da Filial</label>
-                                <input type="text" class="form-control" name="idFilial">
-                                <label>Valor</label>
-                                <input type="text" class="form-control" name="valor">
-                                <label>Quantidade</label>
-                                <input type="text" class="form-control" name="quantidade">
-                                <label>Data de Cadastro</label>
-                                <input type="date" class="form-control" name="dataCadastro"><br>
-                                <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
-                            </form>
-                        </c:if>
                     </div>
                 </div>
             
@@ -78,6 +56,5 @@
                     <button type="submit" class="btn btn-small btn-dark"><a href="<c:url value="/index.jsp"/>">Voltar</a></button>
                 </div>
             </div>
-        </body>
-    </html>
-
+    </body>
+</html>
