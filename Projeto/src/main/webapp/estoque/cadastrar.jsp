@@ -10,7 +10,7 @@
     <body>
         <div class="container">
                 <div class="row">
-                    <h2 class="text-center">Produtos</h2>
+                    <h2 class="text-center">Estoque</h2>
                 </div>
             <div class="container">
                 <div class="row col-md-10 mx-auto flex-row">
@@ -25,31 +25,30 @@
                 </div>
             </div>
             
-                <div class="container"> 
+                <div class="container">
                     <div class="row col-md-10 mx-auto flex-row ">
-                            <form action="CadastrarEstoque" method="POST">
-                                    <!--<label>IdProduto</label>
-                                    <input type="text" class="form-control" id="id">-->
+                            <form action="AlterarEstoqueServlet" method="POST">
+                                    <input type="text" class="form-control" hidden="true" name="idProduto" value="${produto.idProduto}">
                                     <label>Nome do Produto</label>
-                                    <input type="text" class="form-control" name="produto">
+                                    <input type="text" class="form-control" name="produto" value="${produto.produto}">
                                     <label>Categoria</label>
-                                    <input type="text" class="form-control" name="categoria">
+                                    <input type="text" class="form-control" name="categoria" value="${produto.categoria}">
                                     <label>Filial</label>
                                     <div>
-                                        <select name="filial" id="nomeFilial" class="form-control" required="true">
-                                            <option value="-">Selecione</option>
+                                        <select name="filial" class="form-control" required="true">
+                                            <option value="">Selecione</option>
                                             <option value="SP">SP</option>
                                             <option value="MG">MG</option>
                                             <option value="GO">GO</option>
                                         </select>
                                     </div>
                                     <label>Valor</label>
-                                    <input type="text" class="form-control" name="valor">
+                                    <input type="text" class="form-control" name="valor" value="${produto.valor}">
                                     <label>Quantidade</label>
-                                    <input type="text" class="form-control" name="quantidade">
+                                    <input type="text" class="form-control" name="quantidade" value="${produto.quantidade}">
                                     <label>Data de Cadastro</label>
-                                    <input type="date" class="form-control" name="dataCadastro"><br>
-                                <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
+                                    <input type="date" class="form-control" name="dataCadastro" value="${produto.dataCadastro}"><br>
+                                <button type="submit" class="btn btn-small btn-dark">Alterar Produto</button>
                             </form>
                     </div>
                 </div>

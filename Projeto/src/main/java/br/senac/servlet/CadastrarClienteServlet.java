@@ -29,7 +29,7 @@ public class CadastrarClienteServlet extends HttpServlet {
         String dataCadastro = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataCadastro);
         
-        Cliente cliente = new Cliente(nome, cpf, email, cep, numero, data);
+        Cliente cliente = new Cliente(0, nome, cpf, email, cep, numero, data);
         boolean ok = ClienteDAO.cadastrar(cliente);
         
         if(ok){
