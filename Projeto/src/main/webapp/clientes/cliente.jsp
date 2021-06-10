@@ -38,35 +38,35 @@
                     <c:if test="${empty nome}">
                         <form action="CadastrarClienteServlet" method="POST">
                             <label>Nome</label>
-                            <input type="text" name="nome">
+                            <input type="text" name="nome" class="form-control">
                             <label>CPF</label>
-                            <input type="text" name="cpf">
+                            <input type="text" name="cpf" class="form-control">
                             <label>E-mail</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" class="form-control">
                             <label>CEP</label>
-                            <input type="text" name="cep">
+                            <input type="text" name="cep" class="form-control">
                             <label>Número</label>
-                            <input type="text" name="numero">
+                            <input type="text" name="numero" class="form-control">
                             <label>Data de Cadastro</label>
                             <input type="date" class="form-control" name="dataCadastro"><br>
-                            <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
+                            <button type="submit" class="btn btn-small btn-dark">Cadastrar Cliente</button>
                         </form>
                     </c:if>
                     <c:if test="${not empty nome}">
-                          <form action="CadastrarClienteServlet" method="POST">
+                          <form action="AtualizarClienteServlet" method="POST">
                             <label>Nome</label>
-                            <input type="text" name="nome">
+                            <input type="text" name="nome" class="form-control">
                             <label>CPF</label>
-                            <input type="text" name="cpf">
+                            <input type="text" name="cpf" class="form-control">
                             <label>E-mail</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" class="form-control">
                             <label>CEP</label>
-                            <input type="text" name="cep">
+                            <input type="text" name="cep" class="form-control">
                             <label>Número</label>
-                            <input type="text" name="numero">
+                            <input type="text" name="numero" class="form-control">
                             <label>Data de Cadastro</label>
-                            <input type="date" class="form-control" name="dataCadastro"><br>
-                            <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
+                            <input type="date" class="form-control" name="dataCadastro" class="form-control"><br>
+                            <button type="submit" class="btn btn-small btn-dark">Atualizar Cliente</button>
                         </form>
                     </c:if>
                 </div>

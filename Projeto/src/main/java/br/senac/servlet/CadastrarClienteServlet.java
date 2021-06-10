@@ -33,9 +33,9 @@ public class CadastrarClienteServlet extends HttpServlet {
         boolean ok = ClienteDAO.cadastrar(cliente);
         
         if(ok){
-            response.sendRedirect("sucesso.jsp");
+            response.sendRedirect("../sucesso.jsp");
         }else{
-            response.sendRedirect("erro.jsp");
+            response.sendRedirect("../erro.jsp");
         }
         
     }

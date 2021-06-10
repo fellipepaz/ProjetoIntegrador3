@@ -26,7 +26,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarClienteServlet</servlet-name>
-        <url-pattern>/CadastrarClienteServlet</url-pattern>
+        <url-pattern>/clientes/CadastrarClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>AtualizarClienteServlet</servlet-name>
