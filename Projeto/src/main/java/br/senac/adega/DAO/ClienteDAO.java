@@ -43,7 +43,7 @@ public class ClienteDAO {
      public static boolean atualizar(Cliente cliente){
         
         boolean ok = true;
-        String query = "update cliente set nome=?, email=?,cep=?,numero=?,data=? where cpf=?";
+        String query = "update cliente set nome=?, email=?,cep=?,numero=?,dataCadastro=? where cpf=?";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -129,7 +129,7 @@ public class ClienteDAO {
                 int cep = rs.getInt("cep");
                 int numero = rs.getInt("numero");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                cliente = new Cliente(nome,cpf,email,cep,numero,dataCadastro);
+                cliente = new Cliente(nome, cpf, email, cep, numero, dataCadastro);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
