@@ -19,13 +19,12 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
-    public static boolean inserir(Produto produtos) throws SQLException{
+    public static boolean inserir(Produto produtos){
         boolean ok = true;
         String sql = "INSERT INTO produto (produto, filial, valor, quantidade) VALUES (?, ?, ?, ?)";
         
-        Connection conexao = Conexao.getConexao();
-        
         try{
+            Connection conexao = Conexao.getConexao();
             PreparedStatement comando = conexao.prepareStatement(sql);
             
             comando.setString(1, produtos.getProduto());

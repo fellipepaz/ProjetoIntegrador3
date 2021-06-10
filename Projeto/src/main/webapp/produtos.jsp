@@ -26,7 +26,6 @@
                             <li class="breadcrumb-item active" aria-current="page">Cadastro Produtos</li>
                             <li class="breadcrumb-item active" aria-current="page"><a href="cliente.jsp">Cadastro Cliente</a></li>
                             <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.jsp">Relatorios</a></li>
-
                         </ol>
                     </nav>
                 </div>
@@ -34,17 +33,17 @@
                 <div class="container">    
                     <div class="row col-md-10 mx-auto flex-row ">
                         <div class="form-group col-md-2 pr-3">
-                            <form action="CadastrarProdutoServlet" method="POST">
-                                <label>IdProduto</label>
-                                <input type="text" class="form-control" id="id">
+                            <form action="CadastrarProduto" method="POST">
+                                <!--<label>IdProduto</label>
+                                <input type="text" class="form-control" id="id">-->
                                 <label>Produto</label>
-                                <input type="text" class="form-control" id="produto">
+                                <input type="text" class="form-control" name="produto">
                                 <label>Filial</label>
-                                <input type="text" class="form-control" id="filial">
+                                <input type="text" class="form-control" name="filial">
                                 <div><label>Valor</label>
-                                    <input type="text" class="form-control" id="valor">
+                                    <input type="text" class="form-control" name="valor">
                                     <label>Quantidade</label>
-                                    <input type="text" class="form-control" id="quantidade"></div>
+                                    <input type="text" class="form-control" name="quantidade"></div>
                         </div>
                         <div class="form-group col-md-2 pr-3">
                             <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
@@ -54,6 +53,6 @@
                         </div>
                     </div>
                 </div>
-                </body>
-                </html>
+        </body>
+    </html>
 

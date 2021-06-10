@@ -30,11 +30,11 @@
                     </nav>
                 </div>
                 <form action ="VenderProdutoServlet" method="POST">
-                    Nome do cliente: <input type="text" name="nome"><br />
-                    Produto: <input type="text" name="produto"><br />
+                    ID do cliente: <input type="text" name="nome"><br />
+                    ID do Produto: <input type="text" name="produto"><br />
+                    Quantidade <input type="text" name="quantidade"><br />
                     Valor: <input type="text" name="valor"><br />
-                    Filial: <input type="text" name="filial"><br />
-                    Data da venda: <input type="text" name="date"><br />
+                    Data da venda: <input type="date" name="date"><br />
                     <br /><br />
                     <div class="form-group col-md-2 pr-3">
                         <button type="submit" class="btn btn-small btn-dark">Vender</button>

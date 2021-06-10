@@ -8,6 +8,79 @@
         <servlet-name>CadastrarClienteServlet</servlet-name>
         <url-pattern>/CadastrarClienteServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AtualizarClienteServlet</servlet-name>
+        <servlet-class>br.senac.servlet.AtualizarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AtualizarClienteServlet</servlet-name>
+        <url-pattern>/AtualizarClienteServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AtualizarProdutoServlet</servlet-name>
+        <servlet-class>br.senac.servlet.AtualizarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AtualizarProdutoServlet</servlet-name>
+        <url-pattern>/AtualizarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CadastrarProduto</servlet-name>
+        <servlet-class>br.senac.servlet.CadastrarProduto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastrarProduto</servlet-name>
+        <url-pattern>/CadastrarProduto</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ExcluirClienteServlet</servlet-name>
+        <servlet-class>br.senac.servlet.ExcluirClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExcluirClienteServlet</servlet-name>
+        <url-pattern>/ExcluirClienteServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ExcluirProdutoServlet</servlet-name>
+        <servlet-class>br.senac.servlet.ExcluirProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExcluirProdutoServlet</servlet-name>
+        <url-pattern>/ExcluirProdutoServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisarProdutoServlet</servlet-name>
+        <servlet-class>br.senac.servlet.PesquisarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisarProdutoServlet</servlet-name>
+        <url-pattern>/PesquisarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisarClienteServlet</servlet-name>
+        <servlet-class>br.senac.servlet.PesquisarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisarClienteServlet</servlet-name>
+        <url-pattern>/PesquisarClienteServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VenderProdutoServlet</servlet-name>
+        <servlet-class>br.senac.servlet.VenderProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenderProdutoServlet</servlet-name>
+        <url-pattern>/VenderProdutoServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
