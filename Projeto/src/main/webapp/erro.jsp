@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>OPERAÇÃO NEGADA!</h1>
-        <button class="btn btn-small btn-dark"><a href="<c:url value="index.jsp" />">Voltar</a></button>
+        <a href="<c:url value="index.jsp"/>">Voltar</a>
     </body>
 </html>

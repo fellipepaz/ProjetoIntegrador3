@@ -20,12 +20,10 @@
                 <div class="row">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page"><a href="index.jsp">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Vendas</li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="produtos.jsp">Cadastro Produtos</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="cliente.jsp">Cadastro Cliente</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.jsp">Relatorios</a></li>
-
+                            <li class="breadcrumb-item active" aria-current="page"><a href="../index.jsp">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="../produtos/produtos.jsp">Cadastro Produtos</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="../clientes/cliente.jsp">Cadastro Cliente</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="../relatorio/relatorios.jsp">Relatorios</a></li>
                         </ol>
                     </nav>
                 </div>

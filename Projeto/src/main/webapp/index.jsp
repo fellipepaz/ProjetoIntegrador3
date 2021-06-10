@@ -21,10 +21,11 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="vendas.jsp">Vendas</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="produtos.jsp">Cadastro Produtos</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="cliente.jsp">Cadastro Cliente</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="relatorios.jsp">Relatorios</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="venda/vendas.jsp">Vendas</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="produtos/produtos.jsp">Cadastrar Produtos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="ListarProdutos">Listar Produtos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="clientes/cliente.jsp">Cadastro Cliente</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="relatorio/relatorios.jsp">Relatorios</a></li>
                     </ol>
                 </nav>
             </div>

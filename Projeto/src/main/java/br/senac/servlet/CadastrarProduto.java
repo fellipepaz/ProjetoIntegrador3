@@ -7,6 +7,7 @@ package br.senac.servlet;
 import br.senac.adega.DAO.ProdutoDAO;
 import br.senac.adega.entity.Produto;
 import java.io.IOException;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,19 +24,21 @@ public class CadastrarProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //int id = Integer.parseInt (request.getParameter("id"));
         String produto = request.getParameter("produto");
-        String filial = request.getParameter("filial");
+        String categoria = request.getParameter("categoria");
+        int idFilial = Integer.parseInt(request.getParameter("idFilial"));
         double valor = Double.parseDouble(request.getParameter("valor"));
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        String dataCadastro = request.getParameter("dataCadastro");
+        Date data = Date.valueOf(dataCadastro);
         
-        Produto produtos = new Produto(0, produto, filial, valor, quantidade);
+        Produto produtos = new Produto(0, produto, categoria, idFilial, valor, quantidade, data);
         boolean ok = ProdutoDAO.inserir(produtos);
         
         if(ok){
-            response.sendRedirect("sucesso.jsp");
+            response.sendRedirect("../sucesso.jsp");
         }else{
-            response.sendRedirect("erro.jsp");
+            response.sendRedirect("../erro.jsp");
         }
         
     }
