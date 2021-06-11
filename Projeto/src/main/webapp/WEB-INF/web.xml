@@ -28,6 +28,7 @@
         <servlet-name>ListarCliente</servlet-name>
         <servlet-class>br.senac.servlet.ListarCliente</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>CarregarDadosServlet</servlet-name>
         <servlet-class>br.senac.servlet.CarregarDadosServlet</servlet-class>
