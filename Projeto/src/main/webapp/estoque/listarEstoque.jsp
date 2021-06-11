@@ -47,7 +47,7 @@
             <th>ID</th>
             <th>Nome do Produto</th>
             <th>Categoria</th>
-            <th>Nome da Filial</th>
+            <th>ID da Filial</th>
             <th>Quantidade</th>
             <th>Valor</th>
             <th>Data de Cadastro</th>
@@ -57,7 +57,7 @@
                     <td>${produto.idProduto}</td>
                     <td>${produto.produto}</td>
                     <td>${produto.categoria}</td>
-                    <td>${produto.filial}</td>
+                    <td>${produto.idFilial}</td>
                     <td>${produto.quantidade}</td>
                     <td>${produto.valor}</td>
                     <td>${produto.dataCadastro}</td>

@@ -24,22 +24,94 @@
                         </nav>
                 </div>
             </div>
-            
-                <div class="container">
+            <!-- 
+            <div class="row">
+                <div class="col">
+                    <form action="CarregarFilialServlet" method="POST">
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table table-hover">
+                                            <th>ID da Filial</th>
+                                            <th>Nome da Filial</th>
+
+                                            <c:forEach items="${filial}" var="filial">
+                                                <tr>
+                                                    <td>${filial.idFilial}</td>
+                                                    <td>${filial.nome}</td>
+                                                </tr>
+                                            </c:forEach>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-2">
+                                <div class="row mt-2">
+                                    <input type="submit" value="Carregar Filiais" class="btn btn-primary shadow-lg rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            -->
+                <div class="container mt-3">
                     <div class="row col-md-10 mx-auto flex-row ">
+                        <c:if test="${empty produto}">
+                            <form action="CadastrarEstoque" method="POST">
+                                    <input type="text" class="form-control" hidden="true" name="idProduto">
+                                    <label>Nome do Produto</label>
+                                    <input type="text" class="form-control" name="produto" >
+                                    <label>Categoria</label>
+                                    <div>
+                                        <select name="categoria" class="form-control" required="true">
+                                            <option value="">Selecione</option>
+                                            <option value="Bebida Alcólica">Bebida Alcólica</option>
+                                            <option value="Bebida Gaseificada">Bebida Gaseificada</option>
+                                            <option value="Bebida Natural">Bebida Natural</option>
+                                            <option value="Souvenir">Souvenir</option>
+                                        </select>
+                                    </div>
+                                    <label>Filial</label>
+                                    <div>
+                                        <select name="idFilial" class="form-control" required="true">
+                                            <option value="">Selecione</option>
+                                            <option value="1">SP</option>
+                                            <option value="2">MG</option>
+                                            <option value="3">GO</option>
+                                        </select>
+                                    </div>
+                                    <label>Valor</label>
+                                    <input type="text" class="form-control" name="valor" >
+                                    <label>Quantidade</label>
+                                    <input type="text" class="form-control" name="quantidade" >
+                                    <label>Data de Cadastro</label>
+                                    <input type="date" class="form-control" name="dataCadastro" ><br>
+                                    
+                                <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
+                            </form>
+                        </c:if>
+                        <c:if test="${not empty produto}">
                             <form action="AlterarEstoqueServlet" method="POST">
                                     <input type="text" class="form-control" hidden="true" name="idProduto" value="${produto.idProduto}">
                                     <label>Nome do Produto</label>
                                     <input type="text" class="form-control" name="produto" value="${produto.produto}">
                                     <label>Categoria</label>
-                                    <input type="text" class="form-control" name="categoria" value="${produto.categoria}">
+                                    <div>
+                                        <select name="categoria" class="form-control" required="true">
+                                            <option value="">Selecione</option>
+                                            <option value="Bebida Alcólica">Bebida Alcólica</option>
+                                            <option value="Bebida Gaseificada">Bebida Gaseificada</option>
+                                            <option value="Bebida Natural">Bebida Natural</option>
+                                            <option value="Souvenir">Souvenir</option>
+                                        </select>
+                                    </div>
                                     <label>Filial</label>
                                     <div>
-                                        <select name="filial" class="form-control" required="true">
-                                            <option value="">Selecione</option>
-                                            <option value="SP">SP</option>
-                                            <option value="MG">MG</option>
-                                            <option value="GO">GO</option>
+                                        <select name="idFilial" class="form-control" reandoly="true">
+                                            <option value="${produto.idFilial}">${produto.idFilial}</option>
                                         </select>
                                     </div>
                                     <label>Valor</label>
@@ -48,8 +120,10 @@
                                     <input type="text" class="form-control" name="quantidade" value="${produto.quantidade}">
                                     <label>Data de Cadastro</label>
                                     <input type="date" class="form-control" name="dataCadastro" value="${produto.dataCadastro}"><br>
+                                    
                                 <button type="submit" class="btn btn-small btn-dark">Alterar Produto</button>
                             </form>
+                        </c:if>
                     </div>
                 </div>
             

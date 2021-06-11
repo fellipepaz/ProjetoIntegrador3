@@ -31,43 +31,25 @@
                 </div>
             </div>
             
-                <div class="container"> 
+                <div class="container">
                     <div class="row col-md-10 mx-auto flex-row ">
-                        <c:if test="${empty produto}">
-                            <form action="CadastrarProduto" method="POST">
-                                    <!--<label>IdProduto</label>
-                                    <input type="text" class="form-control" id="id">-->
-                                    <label>Nome do Produto</label>
-                                    <input type="text" class="form-control" name="produto">
-                                    <label>Categoria</label>
-                                    <input type="text" class="form-control" name="categoria">
-                                    <label>ID da Filial</label>
-                                    <input type="text" class="form-control" name="idFilial">
-                                    <label>Valor</label>
-                                    <input type="text" class="form-control" name="valor">
-                                    <label>Quantidade</label>
-                                    <input type="text" class="form-control" name="quantidade">
-                                    <label>Data de Cadastro</label>
-                                    <input type="date" class="form-control" name="dataCadastro"><br>
-                                <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
-                            </form>
-                        </c:if>
                         <c:if test="${not empty produto}">
                             <form action="CadastrarProduto" method="POST">
-                                <!--<label>IdProduto</label>
-                                <input type="text" class="form-control" id="id">-->
+                                <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}">
+                                <label class="form-label">ID do Cliente</label><br>
+                                <input type="text" class="form-control" name="idCliente" value="${cliente}" readonly="true">
                                 <label>Nome do Produto</label>
-                                <input type="text" class="form-control" name="produto">
+                                <input type="text" class="form-control" name="produto" value="${produto.produto}">
                                 <label>Categoria</label>
-                                <input type="text" class="form-control" name="categoria">
+                                <input type="text" class="form-control" name="categoria" value="${produto.categoria}">
                                 <label>ID da Filial</label>
-                                <input type="text" class="form-control" name="idFilial">
+                                <input type="text" class="form-control" name="idFilial" value="${produto.idFilial}" readonly="true">
                                 <label>Valor</label>
-                                <input type="text" class="form-control" name="valor">
+                                <input type="text" class="form-control" name="valor" value="${produto.valor}">
                                 <label>Quantidade</label>
-                                <input type="text" class="form-control" name="quantidade">
+                                <input type="text" class="form-control" name="quantidade" value="${produto.quantidade}">
                                 <label>Data de Cadastro</label>
-                                <input type="date" class="form-control" name="dataCadastro"><br>
+                                <input type="date" class="form-control" name="dataCadastro" value="${produto.dataCadastro}"><br>
                                 <button type="submit" class="btn btn-small btn-dark">Cadastrar Produto</button>
                             </form>
                         </c:if>

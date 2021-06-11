@@ -16,18 +16,18 @@ public class EstoqueDAO {
     
     public static boolean inserir(Estoque produtos){
         boolean ok = true;
-        String sql = "INSERT INTO estoque (produto, categoria, filial, valor, quantidade, dataCadastro) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO estoque (produto, categoria, idFilial, valor, quantidade, dataCadastro) VALUES (?, ?, ?, ?, ?, ?)";
         
         try{
             Connection conexao = Conexao.getConexao();
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, produtos.getProduto());
             comando.setString(2, produtos.getCategoria());
-            comando.setString(3, produtos.getFilial());
+            comando.setInt(3, produtos.getIdFilial());
             comando.setDouble(4, produtos.getValor());
             comando.setInt(5, produtos.getQuantidade());
             comando.setDate(6, produtos.getDataCadastro()); 
-            comando.execute();
+            comando.executeUpdate();
             
         }catch (SQLException e){
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -65,7 +65,7 @@ public class EstoqueDAO {
                int id = dados.getInt("idProduto");
                String produto = dados.getString("produto");
                String categoria = dados.getString("categoria");
-               String filial = dados.getString("filial");
+               int filial = dados.getInt("idFilial");
                double valor = dados.getDouble("valor");
                int quantidade = dados.getInt("quantidade");
                Date dataCadastro = dados.getDate("dataCadastro");
@@ -97,7 +97,7 @@ public class EstoqueDAO {
                int id = dados.getInt("id");
                String produto = dados.getString("produto");
                String categoria = dados.getString("categoria");
-               String filial = dados.getString("filial");
+               int filial = dados.getInt("idFilial");
                double valor = dados.getDouble("valor");
                int quantidade = dados.getInt("quantidade");
                Date dataCadastro = dados.getDate("dataCadastro");
@@ -117,7 +117,7 @@ public class EstoqueDAO {
     
     public static boolean editar(Estoque produtos){
         boolean ok = true;
-        String sql = "UPDATE estoque SET produto = ?, categoria=?, filial = ?, valor = ?, quantidade = ?, dataCadastro=? WHERE idProduto = ?"; 
+        String sql = "UPDATE estoque SET produto = ?, categoria=?, idFilial = ?, valor = ?, quantidade = ?, dataCadastro=? WHERE idProduto = ?"; 
         
         Connection conexao;
         try{
@@ -126,7 +126,7 @@ public class EstoqueDAO {
             
             comando.setString(1, produtos.getProduto());
             comando.setString(2, produtos.getCategoria());
-            comando.setString(3, produtos.getFilial());
+            comando.setInt(3, produtos.getIdFilial());
             comando.setDouble(4, produtos.getValor());
             comando.setInt(5, produtos.getQuantidade());
             comando.setDate(6, produtos.getDataCadastro()); 
@@ -150,13 +150,13 @@ public class EstoqueDAO {
             ps.setInt(1, idProduto);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                String filial = rs.getString("filial");
+                int idFilial = rs.getInt("idFilial");
                 String produtos = rs.getString("produto");
                 int quantidade = rs.getInt("quantidade");
                 String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                produto = new Estoque(idProduto, produtos, categoria, filial, valor, quantidade, dataCadastro);
+                produto = new Estoque(idProduto, produtos, categoria, idFilial, valor, quantidade, dataCadastro);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

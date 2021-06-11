@@ -1,4 +1,3 @@
-
 package br.senac.servlet;
 
 import br.senac.adega.DAO.ClienteDAO;
@@ -39,5 +38,4 @@ public class CadastrarClienteServlet extends HttpServlet {
         }
         
     }
-
 }

@@ -20,13 +20,13 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
-    public static boolean inserir(Produto produtos){
-        boolean ok = true;
-        String sql = "INSERT INTO produto (produto, categoria, idFilial, valor, quantidade, dataCadastro) VALUES (?, ?, ?, ?, ?, ?)";
+    public static int inserir(Produto produtos){
+        int id = 0;
+        String sql = "INSERT INTO Estoque (produto, categoria, idFilial, valor, quantidade, dataCadastro) VALUES (?, ?, ?, ?, ?, ?)";
         
         try{
             Connection conexao = Conexao.getConexao();
-            PreparedStatement comando = conexao.prepareStatement(sql);
+            PreparedStatement comando = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             comando.setString(1, produtos.getProduto());
             comando.setString(2, produtos.getCategoria());
             comando.setInt(3, produtos.getIdFilial());
@@ -34,18 +34,19 @@ public class ProdutoDAO {
             comando.setInt(5, produtos.getQuantidade());
             comando.setDate(6, produtos.getDataCadastro()); 
             comando.execute();
-            
+            ResultSet rs = comando.getGeneratedKeys();
+            rs.next();
+            id = Integer.parseInt(rs.getString(1));
         }catch (SQLException e){
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, e);
-            ok = false;
         }
-    return ok;
+    return id;
 
     }
     
     public static boolean excluir(int id) throws SQLException{
         boolean ok = true;
-        String sql = "DELETE FROM produto WHERE id = ?";
+        String sql = "DELETE FROM Estoque WHERE id = ?";
         Connection conexao = Conexao.getConexao();
         try{
             PreparedStatement comando = conexao.prepareStatement(sql);
@@ -59,7 +60,7 @@ public class ProdutoDAO {
     }
     
     public static List<Produto> listar() throws Exception{
-        String sql = "SELECT * FROM produto";
+        String sql = "SELECT * FROM Estoque";
         Connection conexao = Conexao.getConexao();
         List<Produto> lista = new ArrayList();
         try{
@@ -88,7 +89,7 @@ public class ProdutoDAO {
     }
     
     public static List<Produto> pesquisar(String product) throws Exception{
-        String sql = "SELECT * FROM produto WHERE produto LIKE ?";
+        String sql = "SELECT * FROM Estoque WHERE produto LIKE ?";
         
         Connection conexao = Conexao.getConexao();
         List<Produto> lista = new ArrayList();
@@ -125,7 +126,7 @@ public class ProdutoDAO {
     
     public static boolean editar(Produto produtos) throws SQLException{
         boolean ok = true;
-        String sql = "UPDATE produto SET produto = ?, categoria=?, idFilial = ?, valor = ?, quantidade = ?, dataCadastro=? WHERE id = ?"; 
+        String sql = "UPDATE Estoque SET produto = ?, categoria=?, nomeFilial = ?, valor = ?, quantidade = ?, dataCadastro=? WHERE id = ?"; 
         
         Connection conexao = Conexao.getConexao();
         

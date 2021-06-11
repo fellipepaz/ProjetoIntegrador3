@@ -28,6 +28,27 @@
         <servlet-name>ListarCliente</servlet-name>
         <servlet-class>br.senac.servlet.ListarCliente</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>CarregarDadosServlet</servlet-name>
+        <servlet-class>br.senac.servlet.CarregarDadosServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CarregarFilialServlet</servlet-name>
+        <servlet-class>br.senac.servlet.CarregarFilialServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioPorCategoriaServlet</servlet-name>
+        <servlet-class>br.senac.servlet.RelatorioPorCategoriaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioPorClienteServlet</servlet-name>
+        <servlet-class>br.senac.servlet.RelatorioPorClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioPorFilial</servlet-name>
+        <servlet-class>br.senac.servlet.RelatorioPorFilial</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarClienteServlet</servlet-name>
         <url-pattern>/clientes/CadastrarClienteServlet</url-pattern>
@@ -54,7 +75,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarProduto</servlet-name>
-        <url-pattern>/produtos/CadastrarProduto</url-pattern>
+        <url-pattern>/venda/CadastrarProduto</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>ExcluirClienteServlet</servlet-name>
@@ -94,7 +115,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>VenderProdutoServlet</servlet-name>
-        <url-pattern>/VenderProdutoServlet</url-pattern>
+        <url-pattern>/venda/VenderProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarProdutos</servlet-name>
@@ -119,6 +140,26 @@
     <servlet-mapping>
         <servlet-name>ListarCliente</servlet-name>
         <url-pattern>/ListarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarregarDadosServlet</servlet-name>
+        <url-pattern>/venda/CarregarDadosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarregarFilialServlet</servlet-name>
+        <url-pattern>/estoque/CarregarFilialServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioPorCategoriaServlet</servlet-name>
+        <url-pattern>/RelatorioPorCategoriaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioPorClienteServlet</servlet-name>
+        <url-pattern>/RelatorioPorClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioPorFilial</servlet-name>
+        <url-pattern>/RelatorioPorFilial</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

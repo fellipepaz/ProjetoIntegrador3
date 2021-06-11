@@ -23,10 +23,12 @@ public class AlterarEstoqueServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        
         int id = Integer.parseInt(request.getParameter("idProduto"));
         String produto = request.getParameter("produto");
         String categoria = request.getParameter("categoria");
-        String filial = request.getParameter("filial");
+        int filial = Integer.parseInt(request.getParameter("idFilial"));
         double valor = Double.parseDouble(request.getParameter("valor"));
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         String dataCadastro = request.getParameter("dataCadastro");
