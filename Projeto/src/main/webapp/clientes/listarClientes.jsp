@@ -7,12 +7,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Lista de Estoque</title>
+        <title>Lista de Clientes</title>
         
         <script>
             function mostrarTelaConfirmacao(nome, id){
-                $("#nomeProduto").html(nome);
-                $("#idProduto").val(id);
+                $("#nomeCliente").html(nome);
+                $("#idCliente").val(id);
                 
                 var modalConfirmacao = $("#modalConfirmacao");
                 modalConfirmacao.show();
@@ -23,9 +23,9 @@
             }
             
             function deletarProduto(){
-                var id = $("#idProduto").val();
+                var id = $("#idCliente").val();
                 fecharTelaConfirmacao();
-                $.ajax( "ExcluirEstoqueServlet?idProduto=" + id).done(function() {
+                $.ajax( "ExcluirClienteServlet?idCliente=" + id).done(function() {
                     location.reload();
                 })
                 .fail(function() {
@@ -40,30 +40,30 @@
     </head>
     <body class="container">
         <div class="alert alert-danger" role="alert" id="alerta" style="display: none">
-            Erro ao excluir o produto!
+            Erro ao excluir o cliente!
         </div>
         
         <table class="table table-hover">
             <th>ID</th>
-            <th>Nome do Produto</th>
-            <th>Categoria</th>
-            <th>ID da Filial</th>
-            <th>Quantidade</th>
-            <th>Valor</th>
+            <th>Nome do Cliente</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>CEP</th>
+            <th>Número</th>
             <th>Data de Cadastro</th>
             
-            <c:forEach items="${listaProdutos}" var="produto">
+            <c:forEach items="${listaClientes}" var="cliente">
                 <tr>
-                    <td>${produto.idProduto}</td>
-                    <td>${produto.produto}</td>
-                    <td>${produto.categoria}</td>
-                    <td>${produto.idFilial}</td>
-                    <td>${produto.quantidade}</td>
-                    <td>${produto.valor}</td>
-                    <td>${produto.dataCadastro}</td>
+                    <td>${cliente.idCliente}</td>
+                    <td>${cliente.nome}</td>
+                    <td>${cliente.cpf}</td>
+                    <td>${cliente.email}</td>
+                    <td>${cliente.numero}</td>
+                    <td>${cliente.cep}</td>
+                    <td>${cliente.dataCadastro}</td>
                     
-                    <td><a href="AlterarEstoqueServlet?idProduto=${produto.idProduto}" class="btn btn-primary shadow-lg rounded">Alterar</a></td>
-                    <td><button type="button" class="btn btn-primary shadow-lg rounded" onclick="mostrarTelaConfirmacao('${produto.produto}', '${produto.idProduto}')">Excluir</button></td>
+                    <td><a href="AtualizarClienteServlet?idCliente=${cliente.idCliente}" class="btn btn-primary shadow-lg rounded">Alterar</a></td>
+                    <td><button type="button" class="btn btn-primary shadow-lg rounded" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.idCliente}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>
@@ -77,8 +77,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                  <p>Produto: <label id="nomeProduto"></label> <br>Confirmar exclusão do produto?</p>
-                  <input type="hidden" id="idProduto" />
+                  <p>Produto: <label id="nomeCliente"></label> <br>Confirmar exclusão do produto?</p>
+                  <input type="hidden" id="idCliente" />
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="fecharTelaConfirmacao()">Cancelar</button>

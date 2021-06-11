@@ -22,7 +22,7 @@ public class CadastrarClienteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nome = request.getParameter("nome");
-        String cpf = request.getParameter("cpf");
+        int cpf = Integer.parseInt(request.getParameter("cpf"));
         String email = request.getParameter("email");
         int cep = Integer.parseInt(request.getParameter("cep"));
         int numero = Integer.parseInt(request.getParameter("numero"));
@@ -33,9 +33,9 @@ public class CadastrarClienteServlet extends HttpServlet {
         boolean ok = ClienteDAO.cadastrar(cliente);
         
         if(ok){
-            response.sendRedirect("sucesso.jsp");
+            response.sendRedirect("../sucesso.jsp");
         }else{
-            response.sendRedirect("erro.jsp");
+            response.sendRedirect("../erro.jsp");
         }
         
     }

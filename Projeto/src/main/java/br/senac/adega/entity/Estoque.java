@@ -10,17 +10,17 @@ import lombok.Setter;
 public class Estoque {
  
     private int idProduto;
-    private String produto; 
+    private String produto;
     private String categoria;
-    private String filial;
+    private int idFilial;
     private double valor;
     private int quantidade;
     private Date dataCadastro;
   
-    public Estoque (int idProduto, String produto, String categoria, String filial, double valor, int quantidade, Date dataCadastro){
+    public Estoque (int idProduto, String produto, String categoria, int idFilial, double valor, int quantidade, Date dataCadastro){
         this.idProduto = idProduto;
         this.produto = produto;
-        this.filial = filial;
+        this.idFilial = idFilial;
         this.categoria = categoria;
         this.valor = valor;
         this.quantidade = quantidade;

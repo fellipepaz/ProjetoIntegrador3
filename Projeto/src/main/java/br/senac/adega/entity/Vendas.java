@@ -5,30 +5,27 @@
  */
 package br.senac.adega.entity;
 
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
+import java.sql.Date;
+import lombok.Getter;
+import lombok.Setter;
 
-/**
- *
- * @author Lenovo
- */
+@Getter
+@Setter
 public class Vendas {
     
-    public int id;
+    public int idVenda;
     public int idcliente;
+    public int idProduto;
+    public int quantidade;
+    public double valor;
+    public double valortTotal;
     public Date datavenda;
   
-    public int getId() {
-        return id;
+    public Vendas(int idVenda, int idCliente, int idProduto, int quantidade, double valor, double valortTotal) {
+        this.idVenda = idVenda;
+        this.idProduto = idProduto;
+        this.quantidade = quantidade;
+        this.valor = valor;
+        this.valortTotal = valortTotal;
     }
-
-    public int getIdCliente(int id) {
-        return idcliente;
-    }
-
-    public Date getDatavenda() {
-        return datavenda;
-    }
-    
 }

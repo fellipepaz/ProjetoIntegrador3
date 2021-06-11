@@ -5,7 +5,9 @@ package br.senac.servlet;
  * @author thiag
  */
 import br.senac.adega.DAO.ProdutoDAO;
+import br.senac.adega.DAO.VendasDAO;
 import br.senac.adega.entity.Produto;
+import br.senac.adega.entity.Vendas;
 import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.ServletException;
@@ -24,6 +26,8 @@ public class CadastrarProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int idCliente = Integer.parseInt(request.getParameter("idCliente"));
+        int idProduto = Integer.parseInt(request.getParameter("idProduto"));
         String produto = request.getParameter("produto");
         String categoria = request.getParameter("categoria");
         int idFilial = Integer.parseInt(request.getParameter("idFilial"));
@@ -31,16 +35,22 @@ public class CadastrarProduto extends HttpServlet {
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         String dataCadastro = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataCadastro);
+         
+        double valorTotal = valor * quantidade;
         
-        Produto produtos = new Produto(0, produto, categoria, idFilial, valor, quantidade, data);
-        boolean ok = ProdutoDAO.inserir(produtos);
+        System.out.println("id do cliente no servlet: " + idCliente); 
+       
+        /*Produto produtos = new Produto(idProduto, produto, categoria, idFilial, valorTotal, quantidade, data);
+        int IdProduto = ProdutoDAO.inserir(produtos);*/
         
-        if(ok){
-            response.sendRedirect("../sucesso.jsp");
+        Vendas venda = new Vendas(0, idCliente, idProduto, quantidade, valor, valorTotal);
+        venda.setDatavenda(data);
+        boolean okVenda = VendasDAO.cadastrar(venda);
+        
+        if(okVenda){
+          request.getRequestDispatcher("../sucesso.jsp").forward(request, response);
         }else{
-            response.sendRedirect("../erro.jsp");
+            request.getRequestDispatcher("../erro.jsp").forward(request, response);
         }
-        
     }
-
 }
