@@ -1,84 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package br.senac.servlet;
 
+import br.senac.adega.DAO.ClienteDAO;
+import br.senac.adega.entity.Cliente;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author thiag
- */
-@WebServlet(name="AtualizarClienteServlet", urlPatterns={"/AtualizarClienteServlet"})
 public class AtualizarClienteServlet extends HttpServlet {
    
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AtualizarClienteServlet</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AtualizarClienteServlet at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    } 
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
-    } 
-
-    /** 
-     * Handles the HTTP <code>POST</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException {
+        int idCliente = Integer.parseInt(request.getParameter("idCliente"));
+        Cliente produto = ClienteDAO.getCliente(idCliente);
+        
+        request.setAttribute("cliente", produto);
+        request.getRequestDispatcher("/clientes/cliente.jsp").forward(request, response);
     }
 
-    /** 
-     * Returns a short description of the servlet.
-     * @return a String containing servlet description
-     */
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("idCliente"));
+        String nome = request.getParameter("nome");
+        int cpf = Integer.parseInt(request.getParameter("cpf"));
+        String email = request.getParameter("email");
+        int cep = Integer.parseInt(request.getParameter("cep"));
+        int numero = Integer.parseInt(request.getParameter("numero"));
+        String dataCadastro = request.getParameter("dataCadastro");
+        Date data = Date.valueOf(dataCadastro);
+        
+        Cliente clientes = new Cliente(id, nome, cpf, email, cep, numero, data);
+        
+        boolean ok = ClienteDAO.atualizar(clientes);
+        
+        if (ok) {
+            response.sendRedirect("sucesso.jsp");
+        }else{
+            response.sendRedirect("erro.jsp");
+        }
+    }
 }

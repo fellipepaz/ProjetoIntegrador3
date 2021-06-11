@@ -24,6 +24,10 @@
         <servlet-name>ExcluirEstoqueServlet</servlet-name>
         <servlet-class>br.senac.servlet.ExcluirEstoqueServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarCliente</servlet-name>
+        <servlet-class>br.senac.servlet.ListarCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarClienteServlet</servlet-name>
         <url-pattern>/clientes/CadastrarClienteServlet</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ExcluirEstoqueServlet</servlet-name>
         <url-pattern>/ExcluirEstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarCliente</servlet-name>
+        <url-pattern>/ListarCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

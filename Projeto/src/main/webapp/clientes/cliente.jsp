@@ -35,7 +35,7 @@
             
             <div class="container">
                 <div class="row col-md-10 mx-auto flex-row ">
-                    <c:if test="${empty nome}">
+                    <c:if test="${empty cliente}">
                         <form action="CadastrarClienteServlet" method="POST">
                             <label>Nome</label>
                             <input type="text" name="nome" class="form-control">
@@ -52,20 +52,22 @@
                             <button type="submit" class="btn btn-small btn-dark">Cadastrar Cliente</button>
                         </form>
                     </c:if>
-                    <c:if test="${not empty nome}">
+                    <c:if test="${not empty cliente}">
                           <form action="AtualizarClienteServlet" method="POST">
+                            <input type="text" name="idCliente" hidden="true" value="${cliente.idCliente}">
                             <label>Nome</label>
-                            <input type="text" name="nome" class="form-control">
+                            <input type="text" name="nome" class="form-control" value="${cliente.nome}">
                             <label>CPF</label>
-                            <input type="text" name="cpf" class="form-control">
+                            <input type="text" name="cpf" class="form-control" value="${cliente.cpf}">
                             <label>E-mail</label>
-                            <input type="text" name="email" class="form-control">
+                            <input type="text" name="email" class="form-control" value="${cliente.email}">
                             <label>CEP</label>
-                            <input type="text" name="cep" class="form-control">
+                            <input type="text" name="cep" class="form-control" value="${cliente.cep}">
                             <label>Número</label>
-                            <input type="text" name="numero" class="form-control">
+                            <input type="text" name="numero" class="form-control" value="${cliente.numero}">
                             <label>Data de Cadastro</label>
-                            <input type="date" class="form-control" name="dataCadastro" class="form-control"><br>
+                            <input type="date" class="form-control" name="dataCadastro" class="form-control" value="${cliente.dataCadastro}"><br>
+                            
                             <button type="submit" class="btn btn-small btn-dark">Atualizar Cliente</button>
                         </form>
                     </c:if>

@@ -12,15 +12,16 @@ import java.sql.Date;
 @Getter
 @Setter
 public class Cliente {
-    public int id;
+    public int idCliente;
     public String nome;  
-    public String cpf;
+    public int cpf;
     public String email;    
     public int cep;
     public int numero;
     public Date dataCadastro;
     
-    public Cliente(int id, String nome, String cpf, String email, int cep, int numero, Date dataCadastro) {
+    public Cliente(int idCliente, String nome, int cpf, String email, int cep, int numero, Date dataCadastro) {
+        this.idCliente = idCliente;
         this.nome = nome;
         this.cpf = cpf;;
         this.email = email;
