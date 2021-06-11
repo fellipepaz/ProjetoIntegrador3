@@ -17,7 +17,7 @@ public class RelatorioDAO {
 
     public static double getFilial( int filial, Date dataInicial, Date dataFinal) {
         double valor = 0;
-        String query = "select sum(Produto.valor) from Produto inner JOIN Filial ON Filial.idFilial = Produto.idProduto where Produto.dataCadastro between ? and ? and Produto.nomeFilial like ?";
+        String query = "select sum(Estoque.valor) from Estoque inner JOIN Filial ON Filial.idFilial = Estoque.idProduto where Estoque.dataCadastro between ? and ? and Filial.nome like ?";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -41,7 +41,7 @@ public class RelatorioDAO {
 
     public static int getFilialQuantidade(int filial, Date dataInicial, Date dataFinal) {
         int valor = 0;
-        String query = "select sum(Produto.quantidadeProduto) from Produto inner JOIN Filial ON Filial.idFilial = Produto.idProduto where Produto.dataCadastro between ? and ? and Produto.nomeFilial like ?";
+        String query = "select sum(Estoque.quantidade) from Estoque inner JOIN Filial ON Filial.idFilial = Estoque.idProduto where Estoque.dataCadastro between ? and ? and Filial.nome like ?";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -65,7 +65,7 @@ public class RelatorioDAO {
 
     public static int getCliente(int idCliente, Date dataInicial, Date dataFinal) {
         int quantidade = 0;
-        String query = "select count(Cliente.nome) from Cliente INNER JOIN Venda ON Venda.idCliente = Cliente.idCliente where Cliente.idCliente like ?";
+        String query = "select count(Cliente.nome) from Cliente INNER JOIN vendas_produtos ON vendas_produtos.idCliente = Cliente.idCliente where Cliente.idCliente like ?";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -131,7 +131,7 @@ public class RelatorioDAO {
 
     public static double getClienteValor(int idCliente, Date dataInicio, Date dataFim) {
         int quantidade = 0;
-        String query = "select count(Cliente.nome) from Cliente INNER JOIN Venda ON Venda.idCliente = Cliente.idCliente where Cliente.idCliente like ?";
+        String query = "select count(Cliente.nome) from Cliente INNER JOIN vendas_produtos ON vendas_produtos.idCliente = Cliente.idCliente where Cliente.idCliente like ?";
         Connection con;
         try {
             con = Conexao.getConexao();
