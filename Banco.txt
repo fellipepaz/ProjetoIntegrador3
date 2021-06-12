@@ -1,0 +1,130 @@
+CREATE DATABASE pi_adega;
+drop DATABASE pi_adega;
+
+truncate  pi_adega;
+
+use pi_adega;
+
+
+create table Filial(
+	idFilial int primary key auto_increment not null,
+    nome varchar(100) not null
+);
+
+create table cliente (
+	idCliente int primary key auto_increment,
+    nome varchar(50) not null,    
+    cpf int(11),	
+    email varchar(50),
+    cep int(8),
+    numero int not null,
+    dataCadastro date not null    
+);
+
+
+create table Estoque(
+    idProduto int primary key auto_increment,
+    produto varchar(40) not null,
+    categoria varchar(40) not null,
+    IdFilial int,
+    valor double not null,
+    quantidade int not null,
+    dataCadastro date not null,
+	foreign key (IdFilial) references Filial(idFilial)
+);
+
+create table vendas_produtos(
+    idVenda int primary key auto_increment,
+	idFilial int not null,
+    idCliente int not null,
+    idProduto  int not null,
+    quantidade_venda int not null,
+    valor  double not null,
+    total double not null, 
+    dataVenda date not null,
+    foreign key (idCliente) references cliente (idCliente),
+	foreign key (idFilial) references Filial (idFilial),
+    foreign key (idProduto) references Estoque(idProduto)
+);
+
+CREATE  TABLE  usuario (
+   id INT auto_increment primary key,
+   nome VARCHAR ( 255 ),
+   login VARCHAR ( 255 ),
+   senha VARCHAR ( 255 ),
+   perfil VARCHAR ( 255 ),
+    filial VARCHAR ( 255 )
+);
+
+drop table usuario;
+
+
+
+DELIMITER $$
+CREATE TRIGGER ItensVendaInsert
+ before INSERT ON vendas_produtos
+ FOR EACH ROW
+ BEGIN
+ UPDATE Estoque SET quantidade = quantidade - NEW.quantidade_venda 
+ WHERE idProduto = NEW.idProduto;
+ END$$
+DELIMITER ;
+
+drop trigger ItensVendaInsert;
+
+
+/Queries relatórios/
+
+Select  
+cl.nome as Nome,
+count(idVenda) as vendas_cliente,
+sum(pd.total) as Valor_total_ped
+from cliente cl 
+join vendas_produtos pd on pd.idCliente = cl.idCliente 
+join estoque p on p.idProduto = pd.idProduto where dataVenda between '2021-06-11' and '2021-06-12';
+
+Select  
+fl.nome as filial, 
+count(idVenda) as vendas,
+sum(vp.total) as Valor_total
+from Filial fl
+join vendas_produtos vp on vp.idFilial = fl.idFilial
+where dataVenda between '2021-06-11' and '2021-06-12';
+
+Select  
+est.categoria,
+count(idVenda) as vendas,
+sum(vp.total) as Valor_total
+from Estoque est
+join vendas_produtos vp on vp.idProduto = est.idProduto
+where dataVenda between '2021-06-11' and '2021-06-12';
+
+select idProduto, produto, quantidade, valor from Estoque where dataCadastro =  '2021-06-10';
+
+/Insertion/
+
+insert into Filial (idFilial,nome) value ('1','SP'), ('2','MG'),('3','GO');
+
+insert into Cliente (nome,cpf,email,cep,numero,dataCadastro) value 
+('Lucas matheus Silva','42537698712','lais@gmail.com','01514987','2683','2021-06-10'),
+('Larissa','45637987603','larissaoliver@gmail.com','01514000','266','2021-06-11'),
+('claudio vasconcelos','45634563603','vasconcelos.claudio@gmail.com','01514006','340','2021-06-11'),
+('claudiana Alves','45634203603','Claudiana.alves@outlook.com','01545006','356','2021-06-11'),
+('Lucia vasconcelos','45634786603','Luciavas@hotmail.com','01514706','117','2021-06-11'),
+('Lumena Aleluia','45623463604','Lumena.aleluia@gmail.com','03476006','1580','2021-06-12');
+;
+
+insert into Estoque (produto,categoria,IdFilial,valor,quantidade,dataCadastro) value 
+('Colorado - Appia','Cerveja','1','7.5','200','2021-06-10'),
+('Skol','Cerveja','2','1.5','250','2021-06-11'),
+('Bhrama','Cerveja','2','1.2','250','2021-06-11'),
+('Becks','Cerveja','3','5.8','150','2021-06-11');
+
+select*from estoque;
+
+insert into vendas_produtos(idFilial,idCliente,idProduto, quantidade_venda,valor,total,dataVenda) value
+('1','1','1','12','7.5','90.00','2021-06-12'),
+('2','2','3','24','3.5','84.00','2021-06-11');
+
+insert into usuario(nome, login, Senha, perfil, filial) values 
+  ( 'administrador' , 'administracao' , 'admin' , 'admin' , 'SP' );
