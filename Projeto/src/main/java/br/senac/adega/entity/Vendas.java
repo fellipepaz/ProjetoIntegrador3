@@ -13,17 +13,18 @@ import lombok.Setter;
 @Setter
 public class Vendas {
     
-    public int idVenda;
-    public int idcliente;
-    public int idProduto;
-    public int quantidade;
-    public double valor;
-    public double valortTotal;
-    public Date datavenda;
+    private int idVenda;
+    private int idCliente;
+    private int idProduto;
+    private int quantidade;
+    private double valor;
+    private double valortTotal;
+    private Date datavenda;
   
     public Vendas(int idVenda, int idCliente, int idProduto, int quantidade, double valor, double valortTotal) {
         this.idVenda = idVenda;
         this.idProduto = idProduto;
+        this.idCliente = idCliente;
         this.quantidade = quantidade;
         this.valor = valor;
         this.valortTotal = valortTotal;

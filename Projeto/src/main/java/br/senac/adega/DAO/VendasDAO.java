@@ -16,11 +16,11 @@ public class VendasDAO {
         
         String query = "insert into vendas_produtos(idCliente, idProduto, quantidade_venda, valor, total, dataVenda) values (?, ?, ?, ?, ?, ?)";
         Connection con;
-        System.out.println("id do cliente: "+venda.getIdcliente());
+        System.out.println("id do cliente: "+venda.getIdCliente());
         try {
             con = Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, venda.getIdcliente());
+            ps.setInt(1, venda.getIdCliente());
             ps.setInt(2, venda.getIdProduto());
             ps.setInt(3, venda.getQuantidade());
             ps.setDouble(4, venda.getValor());

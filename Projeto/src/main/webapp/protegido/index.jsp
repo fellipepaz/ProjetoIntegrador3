@@ -22,12 +22,12 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="venda/vendas.jsp">Vendas</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="estoque/cadastrar.jsp">Cadastrar Estoque</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="ListarEstoque">Listar Estoque</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="clientes/cliente.jsp">Cadastro Cliente</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="ListarCliente">Listar Clientes</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="relatorio/relatorios.jsp">Relatorios</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/venda/vendas.jsp">Vendas</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/estoque/cadastrar.jsp">Cadastrar Estoque</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/ListarEstoque">Listar Estoque</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/clientes/cliente.jsp">Cadastro Cliente</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/ListarCliente">Listar Clientes</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="\Projeto/protegido/relatorio/relatorios.jsp">Relatorios</a></li>
                     </ol>
                 </nav>
             </div>

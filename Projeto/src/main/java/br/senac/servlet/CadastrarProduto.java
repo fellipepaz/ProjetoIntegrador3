@@ -42,15 +42,15 @@ public class CadastrarProduto extends HttpServlet {
        
         /*Produto produtos = new Produto(idProduto, produto, categoria, idFilial, valorTotal, quantidade, data);
         int IdProduto = ProdutoDAO.inserir(produtos);*/
-        
-        Vendas venda = new Vendas(0, idCliente, idProduto, quantidade, valor, valorTotal);
+        int id = idCliente;
+        Vendas venda = new Vendas(0, id, idProduto, quantidade, valor, valorTotal);
         venda.setDatavenda(data);
         boolean okVenda = VendasDAO.cadastrar(venda);
         
         if(okVenda){
-          request.getRequestDispatcher("../sucesso.jsp").forward(request, response);
+          request.getRequestDispatcher("../../sucesso.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("../erro.jsp").forward(request, response);
+            request.getRequestDispatcher("../../erro.jsp").forward(request, response);
         }
     }
 }

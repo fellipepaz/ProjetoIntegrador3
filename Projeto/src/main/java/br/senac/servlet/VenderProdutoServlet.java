@@ -28,6 +28,6 @@ public class VenderProdutoServlet extends HttpServlet {
         Estoque produto = EstoqueDAO.getEstoque(idProduto);
         request.setAttribute("produto", produto);
         request.setAttribute("cliente", idCliente);
-        request.getRequestDispatcher("/produtos/produtos.jsp").forward(request, response);
+        request.getRequestDispatcher("/protegido/produtos/produtos.jsp").forward(request, response);
     }
 }

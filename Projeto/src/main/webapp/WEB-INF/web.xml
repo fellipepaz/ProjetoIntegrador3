@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+     <filter>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <filter-class>br.senac.utils.AutorizacaoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <url-pattern>/protegido/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>CadastrarClienteServlet</servlet-name>
         <servlet-class>br.senac.servlet.CadastrarClienteServlet</servlet-class>
@@ -28,7 +36,6 @@
         <servlet-name>ListarCliente</servlet-name>
         <servlet-class>br.senac.servlet.ListarCliente</servlet-class>
     </servlet>
-
     <servlet>
         <servlet-name>CarregarDadosServlet</servlet-name>
         <servlet-class>br.senac.servlet.CarregarDadosServlet</servlet-class>
@@ -48,6 +55,10 @@
     <servlet>
         <servlet-name>RelatorioPorFilial</servlet-name>
         <servlet-class>br.senac.servlet.RelatorioPorFilial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>br.senac.servlet.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarClienteServlet</servlet-name>
@@ -75,7 +86,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarProduto</servlet-name>
-        <url-pattern>/venda/CadastrarProduto</url-pattern>
+        <url-pattern>/protegido/venda/CadastrarProduto</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>ExcluirClienteServlet</servlet-name>
@@ -115,7 +126,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>VenderProdutoServlet</servlet-name>
-        <url-pattern>/venda/VenderProdutoServlet</url-pattern>
+        <url-pattern>/protegido/venda/VenderProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarProdutos</servlet-name>
@@ -143,7 +154,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CarregarDadosServlet</servlet-name>
-        <url-pattern>/venda/CarregarDadosServlet</url-pattern>
+        <url-pattern>/protegido/venda/CarregarDadosServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CarregarFilialServlet</servlet-name>
@@ -161,9 +172,16 @@
         <servlet-name>RelatorioPorFilial</servlet-name>
         <url-pattern>/RelatorioPorFilial</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>/protegido/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

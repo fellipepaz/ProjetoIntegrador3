@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>OPERAÇÃO REALIZADA COM SUCESSO!</h1>
-        <a href="<c:url value="index.jsp"/>">Voltar</a>
+        <a href="<c:url value="/protegido/index.jsp"/>">Voltar</a>
     </body>
 </html>
